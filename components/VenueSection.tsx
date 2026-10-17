@@ -1,6 +1,7 @@
 "use client"
 
 import { useReveal } from "./useReveal"
+import { WEDDING } from "@/lib/wedding"
 
 export default function VenueSection() {
   const ref = useReveal()
@@ -11,7 +12,7 @@ export default function VenueSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="reveal font-script text-gold text-3xl mb-3">The Venue</p>
-          <h2 className="reveal section-title text-sage-dark">Teatro Grand Ballroom</h2>
+          <h2 className="reveal section-title text-sage-dark">{WEDDING.venue.name}</h2>
           <div className="reveal divider-ornament">
             <span className="font-script text-gold text-xl">✦</span>
           </div>
@@ -42,13 +43,14 @@ export default function VenueSection() {
             <div className="space-y-1">
               <p className="font-display text-lg text-sage-dark">Address</p>
               <p className="font-body text-sage-dark/60 text-sm leading-relaxed">
-                123 Grand Avenue<br />
-                New York, NY 10001
+                {WEDDING.venue.address.map((line) => (
+                  <span key={line} className="block">{line}</span>
+                ))}
               </p>
             </div>
 
             <a
-              href="https://maps.google.com"
+              href={WEDDING.venue.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-body text-sm text-sage hover:text-sage-dark transition-colors duration-200 tracking-wide underline underline-offset-4"

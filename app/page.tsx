@@ -4,6 +4,8 @@ import HeroSection from "@/components/HeroSection"
 import CountdownSection from "@/components/CountdownSection"
 import OurStory from "@/components/OurStory"
 import VenueSection from "@/components/VenueSection"
+import GallerySection from "@/components/GallerySection"
+import MusicButton from "@/components/MusicButton"
 import ScheduleSection from "@/components/ScheduleSection"
 import DresscodeSection from "@/components/DresscodeSection"
 import TransportSection from "@/components/TransportSection"
@@ -22,6 +24,7 @@ export default function Home() {
         <CountdownSection />
         <OurStory />
         <VenueSection />
+        <GallerySection />
         <ScheduleSection />
         <DresscodeSection />
         <TransportSection />
@@ -30,6 +33,7 @@ export default function Home() {
         <RSVPSection />
       </main>
       <Footer />
+      <MusicButton />
     </>
   )
 }

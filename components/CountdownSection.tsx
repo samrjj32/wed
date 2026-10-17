@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react"
 import { useReveal } from "./useReveal"
+import { WEDDING } from "@/lib/wedding"
 
-const WEDDING_DATE = new Date("2025-06-21T16:00:00")
+const WEDDING_DATE = new Date(WEDDING.dateISO)
 
 type TimeLeft = {
   days: number
@@ -67,7 +68,7 @@ export default function CountdownSection() {
         </div>
 
         <p className="reveal font-body text-xs tracking-[0.3em] uppercase text-ivory/40">
-          June 21st, 2025 · New York City
+          {WEDDING.dateLabel} · {WEDDING.city}
         </p>
       </div>
     </section>

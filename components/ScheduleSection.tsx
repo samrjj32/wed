@@ -30,8 +30,8 @@ export default function ScheduleSection() {
         {/* Timeline */}
         <ol className="relative pl-6 border-l border-sage-dark/20">
           {EVENTS.map((ev, i) => (
-            <li key={i} className="reveal mb-8 last:mb-0 ml-4">
-              <div className="absolute w-2.5 h-2.5 rounded-full bg-gold -left-[5px] border-2 border-ivory" style={{ top: `calc(${i * (100 / (EVENTS.length - 1))}% - 5px)` }} />
+            <li key={i} className="reveal relative mb-8 last:mb-0 ml-4">
+              <div className="absolute w-3 h-3 rounded-full bg-gold border-2 border-cream -left-[47px] top-0.5" />
               <p className="font-body text-[10px] tracking-[0.3em] uppercase text-gold mb-1">
                 {ev.time}
               </p>

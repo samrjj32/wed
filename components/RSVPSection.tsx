@@ -2,12 +2,14 @@
 
 import { useState } from "react"
 import { useReveal } from "./useReveal"
+import { WEDDING } from "@/lib/wedding"
 
 type FormData = {
   name: string
   email: string
   attending: "yes" | "no" | ""
   guests: string
+  transport: "yes" | "no" | ""
   dietary: string
   message: string
 }
@@ -15,18 +17,34 @@ type FormData = {
 export default function RSVPSection() {
   const ref = useReveal()
   const [form, setForm] = useState<FormData>({
-    name: "", email: "", attending: "", guests: "1", dietary: "", message: "",
+    name: "", email: "", attending: "", guests: "1", transport: "", dietary: "", message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState("")
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    // TODO: connect to backend / Supabase
-    setSubmitted(true)
+    setSending(true)
+    setError("")
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(data.error || "Something went wrong")
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong")
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -40,7 +58,7 @@ export default function RSVPSection() {
             <span className="font-script text-gold text-xl">✦</span>
           </div>
           <p className="reveal font-body text-sage-dark/60 text-sm">
-            Please respond by <strong className="text-sage-dark/80">May 21st, 2025</strong>
+            Please respond by <strong className="text-sage-dark/80">{WEDDING.rsvpBy}</strong>
           </p>
         </div>
 
@@ -74,7 +92,7 @@ export default function RSVPSection() {
                 required
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Amara & Ethan"
+                placeholder="Your full name"
                 className="w-full bg-transparent border-b border-sage-dark/30 focus:border-sage-dark/70 outline-none py-2 font-body text-sm text-sage-dark placeholder:text-sage-dark/30 transition-colors duration-200"
               />
             </div>
@@ -144,6 +162,37 @@ export default function RSVPSection() {
               </div>
             )}
 
+            {/* Transport (only if attending) */}
+            {form.attending === "yes" && (
+              <div>
+                <label className="font-body text-xs tracking-[0.2em] uppercase text-sage-dark/60 block mb-3">
+                  Will you need the shuttle?
+                </label>
+                <div className="flex gap-4">
+                  {(["yes", "no"] as const).map((v) => (
+                    <label key={v} className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="transport"
+                        value={v}
+                        checked={form.transport === v}
+                        onChange={handleChange}
+                        className="sr-only"
+                      />
+                      <span
+                        className={`w-4 h-4 rounded-full border flex-shrink-0 transition-colors duration-200 ${
+                          form.transport === v
+                            ? "border-sage-dark bg-sage-dark"
+                            : "border-sage-dark/40"
+                        }`}
+                      />
+                      <span className="font-body text-sm text-sage-dark/70">{v === "yes" ? "Yes, please" : "No, thanks"}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Dietary */}
             <div>
               <label className="font-body text-xs tracking-[0.2em] uppercase text-sage-dark/60 block mb-1.5">
@@ -174,11 +223,16 @@ export default function RSVPSection() {
               />
             </div>
 
+            {error && (
+              <p role="alert" className="font-body text-sm text-destructive text-center">{error}</p>
+            )}
+
             <button
               type="submit"
-              className="w-full mt-4 font-body text-sm tracking-[0.25em] uppercase py-3.5 border border-sage-dark text-sage-dark hover:bg-sage-dark hover:text-ivory transition-all duration-300"
+              disabled={sending}
+              className="w-full mt-4 disabled:opacity-50 font-body text-sm tracking-[0.25em] uppercase py-3.5 border border-sage-dark text-sage-dark hover:bg-sage-dark hover:text-ivory transition-all duration-300"
             >
-              Send Reply
+              {sending ? "Sending…" : "Send Reply"}
             </button>
           </form>
         )}

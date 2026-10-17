@@ -43,17 +43,11 @@ export default function MenuSection() {
 
         {/* Menu frame illustration + content */}
         <div className="reveal relative mx-auto max-w-xl">
-          {/* Frame image as decorative border */}
-          <div className="relative">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/menu-frame-BFE5kCs7.png"
-              alt="Menu frame"
-              className="absolute inset-[-14%] w-[128%] h-[128%] object-contain pointer-events-none z-10"
-            />
-
-            {/* Inner content */}
-            <div className="relative z-0 bg-paper rounded-sm px-8 py-10 shadow-soft text-center space-y-8">
+          {/* Double-rule card frame */}
+          <div className="bg-paper p-3 shadow-elegant">
+            <div className="border border-gold/50 p-1">
+            <div className="border border-gold/30 px-8 py-12 md:px-14 md:py-14 text-center space-y-8">
+              <p className="font-script text-gold text-3xl">Wedding Dinner</p>
               {COURSES.map((c) => (
                 <div key={c.course}>
                   <p className="font-body text-[10px] tracking-[0.35em] uppercase text-gold mb-2">
@@ -72,6 +66,7 @@ export default function MenuSection() {
               <p className="font-body text-xs text-sage-dark/40 pt-2 border-t border-sage-dark/10">
                 Dietary requirements? Let us know in your RSVP.
               </p>
+            </div>
             </div>
           </div>
         </div>

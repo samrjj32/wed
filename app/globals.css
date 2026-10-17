@@ -127,6 +127,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: hsl(var(--border));
   }
 
+  /* Velvet curtain: vertical folds drawn with gradients, no images */
+  .curtain-velvet {
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.35), transparent 18%, transparent 80%, rgba(0,0,0,.45)),
+      repeating-linear-gradient(90deg,
+        #4a0d12 0px, #7a1820 22px, #9c2630 34px, #6b141b 52px, #4a0d12 70px);
+    box-shadow: inset 0 0 80px rgba(0,0,0,.5);
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(20px);

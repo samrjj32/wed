@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Cormorant_Garamond, Great_Vibes, Lora } from "next/font/google"
 import "./globals.css"
+import { COUPLE, WEDDING } from "@/lib/wedding"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -23,8 +24,8 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: "Amara & Ethan | June 21, 2025",
-  description: "You are cordially invited to celebrate the wedding of Amara and Ethan",
+  title: `${COUPLE} | ${WEDDING.dateLabel}`,
+  description: `You are cordially invited to celebrate the wedding of ${WEDDING.partner1} and ${WEDDING.partner2}`,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

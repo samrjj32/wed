@@ -1,17 +1,19 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { INITIALS, WEDDING } from "@/lib/wedding"
 
 const NAV_LINKS = [
   { href: "#story",     label: "Our Story" },
   { href: "#venue",     label: "Venue" },
+  { href: "#gallery",   label: "Gallery" },
   { href: "#schedule",  label: "Schedule" },
   { href: "#dresscode", label: "Dress Code" },
   { href: "#transport", label: "Travel" },
   { href: "#menu",      label: "Menu" },
   { href: "#gifts",     label: "Gifts" },
   { href: "#rsvp",      label: "RSVP" },
-]
+].filter((l) => l.href !== "#gallery" || WEDDING.photos.length > 0)
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -34,7 +36,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         {/* Logo/names */}
         <a href="#hero" className="font-script text-xl text-sage-dark">
-          A&nbsp;&amp;&nbsp;E
+          {INITIALS}
         </a>
 
         {/* Desktop links */}

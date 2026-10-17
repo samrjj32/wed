@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { WEDDING } from "@/lib/wedding"
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null)
@@ -27,7 +28,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={ref}
-      className="min-h-svh flex flex-col items-center justify-center section-padding bg-ivory text-center pt-[45vh]"
+      className="min-h-svh flex flex-col items-center justify-center section-padding bg-ivory text-center pt-24"
     >
       {/* Top ornament */}
       <div className="reveal flex items-center gap-3 mb-8">
@@ -38,9 +39,9 @@ export default function HeroSection() {
 
       {/* Names */}
       <h1 className="reveal font-display font-light text-sage-dark leading-[1.05] tracking-[0.08em]">
-        <span className="block text-6xl md:text-8xl">Amara</span>
+        <span className="block text-6xl md:text-8xl">{WEDDING.partner1}</span>
         <span className="block font-script text-4xl md:text-5xl text-gold my-3">&amp;</span>
-        <span className="block text-6xl md:text-8xl">Ethan</span>
+        <span className="block text-6xl md:text-8xl">{WEDDING.partner2}</span>
       </h1>
 
       {/* Divider */}
@@ -50,10 +51,10 @@ export default function HeroSection() {
 
       {/* Date + location */}
       <p className="reveal font-body text-sage-dark/60 tracking-[0.3em] uppercase text-xs md:text-sm">
-        June 21st, 2025
+        {WEDDING.dateLabel}
       </p>
       <p className="reveal font-body text-sage-dark/50 tracking-[0.2em] text-xs mt-1">
-        Teatro Grand Ballroom · New York City
+        {WEDDING.venue.name} · {WEDDING.city}
       </p>
 
       {/* Scroll cue */}
