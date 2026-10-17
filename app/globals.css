@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background:         40 39% 91%;
+  --foreground:         100 15% 24%;
+  --paper:              0 0% 100%;
+  --card:               40 35% 88%;
+  --card-foreground:    100 15% 24%;
+  --popover:            40 39% 91%;
+  --popover-foreground: 100 15% 24%;
+  --primary:            100 15% 24%;
+  --primary-foreground: 40 39% 91%;
+  --secondary:          60 12% 69%;
+  --secondary-foreground: 100 15% 24%;
+  --muted:              60 10% 82%;
+  --muted-foreground:   77 15% 40%;
+  --accent:             77 15% 50%;
+  --accent-foreground:  40 39% 91%;
+  --destructive:        0 65% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border:             60 12% 75%;
+  --input:              60 12% 75%;
+  --ring:               100 15% 24%;
+  --radius:             0.5rem;
+  --ivory:              40 39% 91%;
+  --cream:              40 35% 88%;
+  --sage:               77 15% 50%;
+  --sage-dark:          100 15% 24%;
+  --sage-light:         60 12% 69%;
+  --gold:               42 85% 55%;
+  --gold-soft:          42 60% 70%;
+  --terracotta:         77 25% 45%;
+  --olive:              77 15% 50%;
+  --carbon:             0 0% 16%;
+  --countdown:          72 16% 43%;
+  --transition-smooth:  all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce:  all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --shadow-soft:        0 2px 15px -3px rgba(58,69,52,.08), 0 4px 6px -2px rgba(58,69,52,.04);
+  --shadow-elegant:     0 10px 40px -10px rgba(58,69,52,.15), 0 4px 15px -3px rgba(58,69,52,.08);
+  --shadow-lifted:      0 20px 50px -15px rgba(58,69,52,.2), 0 8px 20px -5px rgba(58,69,52,.1);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* expose original-naming aliases so any var(--font-display/script/body) references work */
+  --font-display: var(--font-cormorant, "Cormorant Garamond", serif);
+  --font-script: var(--font-great-vibes, "Great Vibes", cursive);
+  --font-body: var(--font-lora, "Lora", serif);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-lora, serif);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+  background-size: 200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display, var(--font-cormorant, serif));
+}
+
+@layer components {
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 8rem 3rem;
+    }
+  }
+
+  .section-title {
+    font-family: var(--font-cormorant, serif);
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  .card-elegant {
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    background-color: hsl(var(--card) / 0.8);
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 15px -3px rgba(58,69,52,.08), 0 4px 6px -2px rgba(58,69,52,.04);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+  }
+
+  .card-elegant:hover {
+    box-shadow: 0 10px 40px -10px rgba(58,69,52,.15), 0 4px 15px -3px rgba(58,69,52,.08);
+    transform: translateY(-2px);
+  }
+
+  .divider-ornament {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: "";
+    height: 1px;
+    max-width: 6rem;
+    flex: 1;
+    background-color: hsl(var(--border));
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(.4,0,.2,1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

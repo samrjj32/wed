@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx create-next-app@latest *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s http://localhost:3002)",
+      "Bash(curl -s http://localhost:3003)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(PORT=3002 npm run dev)",
+      "Bash(echo \"Started PID: $!\")",
+      "Bash(kill 43584)",
+      "Bash(git -C /Users/sanju/websites/wedding-site status)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
