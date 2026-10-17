@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sam &amp; Sofía · Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Language switcher -->
+  <div class="lang-switch" id="langSwitch">
+    <button type="button" data-lang="en" class="active">EN</button>
+    <button type="button" data-lang="it">IT</button>
+  </div>
+
+  <!-- Background music -->
+  <audio id="music" src="/assets/intro-music-CzqJOUtA.mp3" loop preload="auto"></audio>
+  <button type="button" class="music-btn" id="musicBtn" aria-label="Toggle music" hidden>
+    <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
+    <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
+  </button>
+
+  <main>
+    <!-- ============ INTRO / CURTAIN ============ -->
+    <section class="intro" id="intro">
+      <img class="intro-media" id="curtainClosed" src="/assets/curtain-closed-Bpkadld4.jpg" alt="" />
+      <video class="intro-media" id="curtainVideo" src="/assets/curtain-video-BAKLj3Y5.mp4" playsinline muted preload="auto"></video>
+
+      <div class="tap-hint" id="tapHint">
+        <div class="tap-icon">
+          <span class="tap-ring"></span>
+          <span class="tap-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v6"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+          </span>
+        </div>
+        <p data-i18n="intro.tapToContinue">Tap to continue</p>
+      </div>
+
+      <div class="intro-names" id="introNames">
+        <div class="intro-names-inner">
+          <p class="intro-invite" data-i18n="intro.invitation">You are cordially invited to celebrate the wedding of</p>
+          <h1 class="intro-name">Sam</h1>
+          <span class="intro-amp">&amp;</span>
+          <h1 class="intro-name last">Sofía</h1>
+        </div>
+      </div>
+
+      <div class="intro-message" id="introMessage">
+        <p data-i18n="intro.personalMessage">We would like to invite you to celebrate with us the most special day of our lives. It would be an honor to have you present at this important moment.</p>
+      </div>
+
+      <div class="scroll-hint" id="scrollHint">
+        <div class="bounce">
+          <p data-i18n="intro.scroll">Scroll</p>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5C2018" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCRATCH REVEAL ============ -->
+    <section class="section cream reveal-section" id="scratchSection">
+      <div class="scratch-hint" id="scratchHint">
+        <div class="hint-icon">
+          <span class="hint-ring"></span>
+          <span class="hint-circle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C2018" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v6"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+          </span>
+        </div>
+        <p data-i18n="reveal.scratchHint">Scratch all three circles to continue</p>
+      </div>
+
+      <div class="center reveal mb-8">
+        <h2 class="script title-md mb-4" data-i18n="reveal.title">Reveal</h2>
+        <p class="eyebrow" data-i18n="reveal.subtitle">Scratch to discover the date</p>
+      </div>
+
+      <div class="scratch-row">
+        <div class="scratch reveal" style="--d:.2s"><span>10</span><canvas width="150" height="150"></canvas></div>
+        <div class="scratch reveal" style="--d:.35s"><span>Sept</span><canvas width="150" height="150"></canvas></div>
+        <div class="scratch reveal" style="--d:.5s"><span>2027</span><canvas width="150" height="150"></canvas></div>
+      </div>
+
+      <p class="script announce" id="announce" data-i18n="reveal.weddingAnnouncement">We're getting married!</p>
+    </section>
+
+    <!-- ============ COUNTDOWN ============ -->
+    <section class="section white">
+      <div class="center reveal mb-10">
+        <h2 class="script title-md" data-i18n="countdown.title">Countdown</h2>
+      </div>
+      <div class="countdown">
+        <div class="cd-unit reveal" style="--d:.2s"><div class="cd-box" id="cdDays">00</div><span data-i18n="countdown.days">Days</span></div>
+        <div class="cd-unit reveal" style="--d:.3s"><div class="cd-box" id="cdHours">00</div><span data-i18n="countdown.hours">Hours</span></div>
+        <div class="cd-unit reveal" style="--d:.4s"><div class="cd-box" id="cdMinutes">00</div><span data-i18n="countdown.minutes">Min</span></div>
+        <div class="cd-unit reveal" style="--d:.5s"><div class="cd-box" id="cdSeconds">00</div><span data-i18n="countdown.seconds">Sec</span></div>
+      </div>
+      <p class="body-text small mt-10 reveal" style="--d:.6s" data-i18n="countdown.forTheBigDay">until the big day</p>
+    </section>
+
+    <!-- ============ SAVE THE DATE / VENUE ============ -->
+    <section class="section white venue">
+      <p class="eyebrow center reveal mb-4" data-i18n="saveTheDate.celebrationAt">The celebration will take place at</p>
+      <div class="venue-img reveal" style="--d:.2s"><img src="/assets/venue-illustration-DebdGS8I.png" alt="Venue Illustration" /></div>
+      <h2 class="display venue-name center reveal mb-4" style="--d:.4s">Villa Medicea di Artimino</h2>
+      <div class="center reveal mb-8" style="--d:.5s">
+        <p class="eyebrow-sm">Via di Papa Leone X, 28</p>
+        <p class="eyebrow-sm">Artimino, Florencia</p>
+      </div>
+      <p class="display date-big center reveal mb-10" style="--d:.6s">September 10, 2027</p>
+      <p class="script title-sm center reveal" style="--d:1s" data-i18n="saveTheDate.receptionToFollow">Reception to Follow</p>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section cream menu-section">
+      <div class="menu reveal">
+        <img src="/assets/menu-frame-BFE5kCs7.png" alt="" />
+        <div class="menu-content">
+          <div class="menu-course reveal" style="--d:.4s">
+            <h3>Aperitivo</h3>
+            <p>Selección de antipasti toscanos</p>
+            <p class="italic">Bruschetta, crostini &amp; affettati misti</p>
+          </div>
+          <div class="menu-course reveal" style="--d:.5s">
+            <h3>Primo</h3>
+            <p>Risotto al tartufo nero di Norcia</p>
+            <p class="italic">con parmigiano reggiano 24 mesi</p>
+          </div>
+          <div class="menu-course reveal" style="--d:.6s">
+            <h3>Secondo</h3>
+            <p>Filetto di manzo alla griglia</p>
+            <p class="italic">con salsa al vino rosso e verdure di stagione</p>
+          </div>
+          <div class="menu-course reveal" style="--d:.7s">
+            <h3>Dolce</h3>
+            <p>Torta nuziale con crema di mascarpone</p>
+            <p class="italic">e frutti di bosco freschi</p>
+          </div>
+          <p class="script menu-wine reveal" style="--d:.8s">Vini della Tenuta</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DRESS CODE ============ -->
+    <section class="section white">
+      <h2 class="display title-lg center reveal mb-8" data-i18n="dressCode.title">Dress Code</h2>
+      <div class="dress-img reveal" style="--d:.2s"><img src="/assets/dresscode-illustration-B5z5OYvq.png" alt="Dress Code Illustration" /></div>
+      <p class="body-text center narrow reveal mb-8" style="--d:.4s" data-i18n="dressCode.description">We invite you to dress elegantly and formally to celebrate this special day with us.</p>
+      <p class="display title-sm center reveal mb-8" style="--d:.6s" data-i18n="dressCode.formal">Formal Attire</p>
+      <p class="script title-xs center reveal" style="--d:.8s" data-i18n="dressCode.avoidWhite">Please avoid wearing white</p>
+    </section>
+
+    <!-- ============ GIFTS ============ -->
+    <section class="section cream">
+      <div class="center reveal mb-12">
+        <p class="eyebrow-sm mb-4" data-i18n="gifts.weddingList">Wedding registry</p>
+        <img class="gift-icon" src="/assets/gift-icon-BssCdzah.png" alt="Gift" />
+        <h2 class="display title-lg" data-i18n="gifts.title">Gifts</h2>
+      </div>
+      <p class="body-text center narrow reveal mb-12" style="--d:.2s" data-i18n="gifts.message">Your presence is the best gift we could receive. However, if you wish to contribute to our new life together, you can do so via bank transfer.</p>
+      <p class="script title-sm center reveal mb-12" style="--d:.4s" data-i18n="gifts.withLove">With all our love</p>
+      <div class="center reveal" style="--d:.6s">
+        <p class="eyebrow-sm mb-4" data-i18n="gifts.bankDetails">Bank details</p>
+        <div class="bank-box">
+          <p><span data-i18n="gifts.accountHolder">ACCOUNT HOLDER</span>: SAM &amp; SOFIA</p>
+          <p>IBAN: ES00 0000 0000 0000 0000 0000</p>
+          <p data-i18n="gifts.concept">REFERENCE: Sam &amp; Sofia Wedding</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRANSPORT ============ -->
+    <section class="section white">
+      <div class="center reveal mb-12">
+        <p class="eyebrow-sm mb-4" data-i18n="transport.howToGet">How to get there</p>
+        <img class="transport-icon" src="/assets/transport-icon-W5j6hOWf.png" alt="" />
+        <h2 class="display title-lg" data-i18n="transport.title">Transport</h2>
+      </div>
+      <p class="body-text center narrow reveal mb-16" style="--d:.2s" data-i18n="transport.description">We have organized buses from the center of Florence to the villa so you can enjoy the celebration without worries.</p>
+      <div class="center reveal mb-16" style="--d:.4s">
+        <p class="eyebrow-sm mb-6" data-i18n="transport.departure">Bus departure</p>
+        <p class="display title-sm mb-2">Piazza della Signoria</p>
+        <p class="display title-xs">16:00h</p>
+      </div>
+      <div class="center reveal mb-12" style="--d:.6s">
+        <p class="eyebrow-sm mb-6" data-i18n="transport.returnTo">Return to Florence</p>
+        <p class="display title-xs">02:00h</p>
+      </div>
+      <p class="script title-xs center reveal" style="--d:.8s" data-i18n="transport.rsvpNote">Please indicate in your RSVP if you need transport</p>
+    </section>
+
+    <!-- ============ PHOTO ============ -->
+    <section class="section white photo">
+      <div class="photo-frame reveal">
+        <img src="/__l5e/assets-v1/263c205d-a931-4b5e-9a00-5c67f9e3d96e/wedding-photo-frame.png" alt="Photo of the couple with decorative frame" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section class="section cream rsvp" id="rsvp">
+      <div class="rsvp-wrap" id="rsvpWrap">
+        <div class="pill reveal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span data-i18n="form.customizable">This form is fully customizable to your needs</span>
+        </div>
+
+        <div class="center reveal mb-10">
+          <img class="rsvp-icon" src="/assets/rsvp-icon-DZDwmR6q.png" alt="RSVP icon" />
+          <h2 class="script title-md" data-i18n="form.subtitle">Confirm your attendance</h2>
+        </div>
+
+        <form class="rsvp-form reveal" id="rsvpForm" novalidate>
+          <!-- honeypot -->
+          <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+
+          <div class="field">
+            <label for="fullName"><span data-i18n="form.fullName">Full Name</span> *</label>
+            <input id="fullName" name="full_name" type="text" required data-i18n-ph="form.fullNamePlaceholder" placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="form.email">Email (optional)</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" />
+          </div>
+
+          <div class="field">
+            <label><span data-i18n="form.willAttend">Will you attend?</span> *</label>
+            <div class="choice-row" data-group="attendance">
+              <button type="button" class="choice" data-value="yes" data-i18n="form.yes">Yes, I'll be there!</button>
+              <button type="button" class="choice" data-value="no" data-i18n="form.no">No, I can't make it</button>
+            </div>
+          </div>
+
+          <div id="attendingFields" hidden>
+            <div class="field">
+              <label for="guests" data-i18n="form.guestCount">How many guests in total?</label>
+              <input id="guests" type="number" min="1" max="10" value="1" class="input-sm" />
+            </div>
+
+            <div class="companions" id="companions" hidden>
+              <label data-i18n="form.companionTitle">Guest information</label>
+              <div id="companionList"></div>
+            </div>
+
+            <div class="field">
+              <div class="label-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                <label data-i18n="form.dietaryTitle">Your dietary requirements</label>
+              </div>
+              <p class="help" data-i18n="form.dietaryHelp">Please let us know of any allergies or dietary restrictions:</p>
+              <div class="checks">
+                <label class="check"><input type="checkbox" name="diet" value="gluten" /><span data-i18n="diet.gluten">Gluten-free / Celiac</span></label>
+                <label class="check"><input type="checkbox" name="diet" value="lactose" /><span data-i18n="diet.lactose">Lactose-free</span></label>
+                <label class="check"><input type="checkbox" name="diet" value="vegetarian" /><span data-i18n="diet.vegetarian">Vegetarian</span></label>
+                <label class="check"><input type="checkbox" name="diet" value="vegan" /><span data-i18n="diet.vegan">Vegan</span></label>
+                <label class="check"><input type="checkbox" name="diet" value="nuts" /><span data-i18n="diet.nuts">Nut allergy</span></label>
+                <label class="check"><input type="checkbox" name="diet" value="seafood" /><span data-i18n="diet.seafood">Seafood allergy</span></label>
+              </div>
+              <label for="otherAllergy" class="help" data-i18n="form.other">Other:</label>
+              <input id="otherAllergy" type="text" data-i18n-ph="form.otherPlaceholder" placeholder="E.g., egg allergy" />
+            </div>
+
+            <div class="field">
+              <div class="label-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg>
+                <label data-i18n="form.transportTitle">Transport</label>
+              </div>
+              <p class="help" data-i18n="form.transportHelp">Do you need bus transport to the venue?</p>
+              <div class="choice-row small" data-group="needs_bus">
+                <button type="button" class="choice" data-value="yes" data-i18n="form.transportYes">Yes, I need transport</button>
+                <button type="button" class="choice" data-value="no" data-i18n="form.transportNo">No, I'll get there on my own</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="label-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <label data-i18n="form.songTitle">Song request</label>
+              </div>
+              <p class="help" data-i18n="form.songHelp">What song would you love to hear at our wedding?</p>
+              <input id="song" type="text" data-i18n-ph="form.songPlaceholder" placeholder="Artist - Song name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="form.messageLabel">Message for the couple (optional)</label>
+            <textarea id="message" rows="3" data-i18n-ph="form.messagePlaceholder" placeholder="Write us a few words..."></textarea>
+          </div>
+
+          <p class="form-error" id="formError" role="alert" hidden></p>
+
+          <button type="submit" class="submit" id="submitBtn" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+            <span id="submitLabel" data-i18n="form.send">Confirm</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="rsvp-done" id="rsvpDone" hidden>
+        <h2 class="script title-md mb-6" data-i18n="rsvp.thanks">Thank you!</h2>
+        <p class="body-text" data-i18n="rsvp.confirmation">We have received your confirmation. See you soon!</p>
+        <p class="script title-xs mt-8">— Sam &amp; Sofía</p>
+      </div>
+    </section>
+
+    <!-- ============ THANK YOU ============ -->
+    <section class="section white">
+      <div class="thanks-card reveal">
+        <div class="thanks-inner">
+          <h2 class="script title-sm mb-6" data-i18n="thankYou.title">Thank You</h2>
+          <p class="body-text small mb-6" data-i18n="thankYou.message">For joining us on this special day. Your presence is the best gift we could receive.</p>
+          <p class="script title-xs">Sam &amp; Sofía</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
